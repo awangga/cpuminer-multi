@@ -1,6 +1,17 @@
 CPUMiner-Multi
 ==============
 
+ARM32 banana pi m3 compile:
+```sh
+export CFLAGS="-O3 -march=native+neon"
+export LDFLAGS="-lcurl -lssl -lcrypto -lz -ljansson"
+autoreconf -fiv
+./autogen.sh
+./configure
+make V=1
+make clean
+```
+
 [![Build Status](https://travis-ci.org/tpruvot/cpuminer-multi.svg)](https://travis-ci.org/tpruvot/cpuminer-multi)
 
 This is a multi-threaded CPU miner,
