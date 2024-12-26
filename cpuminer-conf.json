@@ -5,7 +5,7 @@
 	"api-bind" : "0.0.0.0:4048",
 
 	"url" : "stratum+tcp://yescryptR32.sea.mine.zpool.ca:6343",
-	"user" : "UcraXZwXhita8zZFXoYopNWsy9kynNj7oG",
+	"user" : "UYSFu7mQJjxCbPRMqCm7op3n9b3uQdrPsX",
 	"pass" : "c=UNFY,zap=UNFY",
 
 	"algo" : "yescryptr32",
