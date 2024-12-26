@@ -3630,6 +3630,13 @@ int main(int argc, char *argv[]) {
 		applog(LOG_ERR, "work thread create failed");
 		return 1;
 	}
+	
+	/* tambakan curl_global_init*/
+	if (curl_global_init(CURL_GLOBAL_DEFAULT) != CURLE_OK) {
+    	fprintf(stderr, "Failed to initialize CURL globally.\n");
+    	return EXIT_FAILURE;
+	}
+
 
 	/* ESET-NOD32 Detects these 2 thread_create... */
 	if (want_longpoll && !have_stratum) {
