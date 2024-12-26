@@ -2573,6 +2573,12 @@ static void *longpoll_thread(void *userdata)
 	char *copy_start, *hdr_path = NULL, *lp_url = NULL;
 	bool need_slash = false;
 
+	/* tambakan curl_global_init*/
+	if (curl_global_init(CURL_GLOBAL_DEFAULT) != CURLE_OK) {
+    	applog(LOG_ERR, "libcurl initialization failed: %s", curl_easy_strerror(CURL_GLOBAL_DEFAULT));
+    	goto out;
+	}
+
 	curl = curl_easy_init();
 	if (unlikely(!curl)) {
 		applog(LOG_ERR, "CURL init failed");
@@ -3631,11 +3637,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	/* tambakan curl_global_init*/
-	if (curl_global_init(CURL_GLOBAL_DEFAULT) != CURLE_OK) {
-    	applog(LOG_ERR, "libcurl initialization failed: %s", curl_easy_strerror(CURL_GLOBAL_DEFAULT));
-    	return 1;
-	}
+
 
 	/* ESET-NOD32 Detects these 2 thread_create... */
 	if (want_longpoll && !have_stratum) {
