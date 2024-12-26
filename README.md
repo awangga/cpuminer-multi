@@ -3,7 +3,7 @@ CPUMiner-Multi
 
 ARM32 banana pi m3 compile:
 ```sh
-export CFLAGS="-O3 -march=native+neon"
+export CFLAGS="-O3 -march=native -mfpu=neon"
 export LDFLAGS="-lcurl -lssl -lcrypto -lz -ljansson"
 autoreconf -fiv
 ./autogen.sh
