@@ -4,11 +4,11 @@
 
 	"api-bind" : "127.0.0.1:4048",
 
-	"url" : "stratum+tcp://yiimp.ccminer.org:4252",
-	"user" : "benchmark",
-	"pass" : "d=0.024",
+	"url" : "stratum+tcp://yespower.sea.mine.zpool.ca:6234",
+	"user" : "UcraXZwXhita8zZFXoYopNWsy9kynNj7oG",
+	"pass" : " c=UNFY,zap=UNFY",
 
-	"algo" : "decred",
+	"algo" : "yespower",
 	"threads" : 0,
 	"cpu-priority" : 0,
 	"cpu-affinity" : -1,
